@@ -18,5 +18,10 @@ import matplotlib.pyplot as plt
 t = np.arange(0., 5., 0.2)
 
 # red dashes, blue squares and green triangles
+from matplotlib.backends.backend_pdf import PdfPages
+
+pdf=PdfPages('foo.pdf')
+fig = plt.figure()
 plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
-plt.show()
+pdf.savefig(fig)
+pdf.close()
